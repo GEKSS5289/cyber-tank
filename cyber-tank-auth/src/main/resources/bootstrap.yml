@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: cyber-tank-auth
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 100.125.87.114:30848 # Nacos 服务注册地址
+        namespace: 9c7fb8cb-9787-4bb6-b861-3bbee4024c7f
+      config:
+        server-addr: 100.125.87.114:30848 # Nacos 配置中心地址
+        namespace: 9c7fb8cb-9787-4bb6-b861-3bbee4024c7f
+        file-extension: yaml
+        shared-configs:
+          - data-id: cyber-tank-common.yaml
+            group: DEFAULT_GROUP
+            refresh: true

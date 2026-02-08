@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/cyber-tank-api/cyber-tank-member-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-api/cyber-tank-member-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-auth/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-mq/cyber-tank-common-mq-rabbit/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-mq/cyber-tank-common-mq-rabbit/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-mq/cyber-tank-common-mq-rocket/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-mq/cyber-tank-common-mq-rocket/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-mq/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-mq/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-security/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-thirdparty/cyber-tank-common-thirdparty-alipay/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-thirdparty/cyber-tank-common-thirdparty-alipay/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-thirdparty/cyber-tank-common-thirdparty-sms/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-thirdparty/cyber-tank-common-thirdparty-sms/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-thirdparty/cyber-tank-common-thirdparty-wechat/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-thirdparty/cyber-tank-common-thirdparty-wechat/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-thirdparty/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-thirdparty/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-web/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-data/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-data/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-member/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-member/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

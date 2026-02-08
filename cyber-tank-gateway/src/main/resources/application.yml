@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: cyber-tank-gateway
+  data:
+    redis:
+      host: ${REDIS_HOST:127.0.0.1}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      database: ${REDIS_DATABASE:0}
+  cloud:
+    gateway:
+      default-filters:
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter.replenishRate: ${GATEWAY_RATE_LIMIT_REPLENISH:10}
+            redis-rate-limiter.burstCapacity: ${GATEWAY_RATE_LIMIT_BURST:20}
+            redis-rate-limiter.requestedTokens: ${GATEWAY_RATE_LIMIT_TOKENS:1}
+            key-resolver: "#{@rateLimitKeyResolver}"
+
+server:
+  port: ${SERVER_PORT:8080}
+
+gateway:
+  auth:
+    enabled: true
+    jwt-secret: ${GATEWAY_JWT_SECRET:change-me}
+    auth-header: Authorization
+    bearer-prefix: "Bearer "
+    whitelist:
+      - /actuator/**
+      - /swagger-ui/**
+      - /v3/api-docs/**
+      - /auth/**
+      - /member/login

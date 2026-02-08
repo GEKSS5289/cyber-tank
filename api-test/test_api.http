@@ -1,0 +1,26 @@
+### 1. 用户登录 (获取通行证)
+# @name login
+POST http://localhost:1000/api/auth/auth/login
+Content-Type: application/json
+
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+> {%
+    client.test("登录成功", function() {
+        client.assert(response.status === 200, "HTTP状态码不是200");
+        client.assert(response.body.code === 200, "登录业务失败: " + response.body.msg);
+        client.assert(response.body.data != null, "Token为空");
+    });
+
+    // 将返回的 JWT 存储到全局变量 token 中，供后续接口使用
+    client.global.set("token", response.body.data);
+    client.log("获取到 Token: " + response.body.data);
+%}
+
+### 2. 这里的 token 变量会被上面的脚本自动填充
+GET http://localhost:1000/api/member/v1/members/1
+Accept: application/json
