@@ -15,7 +15,6 @@
         <dependency>
             <groupId>com.cyber.tank</groupId>
             <artifactId>cyber-tank-common-web</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>
@@ -26,7 +25,6 @@
         <dependency>
             <groupId>com.cyber.tank</groupId>
             <artifactId>cyber-tank-api</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>

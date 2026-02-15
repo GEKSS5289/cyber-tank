@@ -16,7 +16,6 @@
         <dependency>
             <groupId>com.cyber.tank</groupId>
             <artifactId>cyber-tank-common-core</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>
