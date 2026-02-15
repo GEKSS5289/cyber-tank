@@ -1,89 +1,100 @@
 package com.cyber.tank.common.db.utils;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
 
 /**
- * MySQL 通用工具。
- * <p>
- * 该工具基于 JdbcTemplate 封装，适用于跨业务的轻量 SQL 访问场景，
- * 如：批量更新、公共字典读取、健康检查等。
+ * MySQL 通用工具（基于 MyBatis-Plus 封装）。
  */
-@Slf4j
 @Component
-@RequiredArgsConstructor
 public class MySqlService {
 
-    private final JdbcTemplate jdbcTemplate;
-
     /**
-     * 执行更新类 SQL（insert/update/delete）。
-     *
-     * @param sql    SQL 语句
-     * @param params 参数
-     * @return 受影响行数
+     * 新增单条数据。
      */
-    public int update(String sql, Object... params) {
-        return jdbcTemplate.update(sql, params);
+    public <T> int insert(BaseMapper<T> mapper, T entity) {
+        return mapper.insert(entity);
     }
 
     /**
-     * 执行批量更新 SQL。
-     *
-     * @param sql       SQL 模板
-     * @param batchArgs 批量参数
-     * @return 每条 SQL 的影响行数
+     * 批量新增（逐条插入，适用于通用小批量场景）。
      */
-    public int[] batchUpdate(String sql, List<Object[]> batchArgs) {
-        if (batchArgs == null || batchArgs.isEmpty()) {
-            return new int[0];
+    public <T> int insertBatch(BaseMapper<T> mapper, Collection<T> entities) {
+        if (entities == null || entities.isEmpty()) {
+            return 0;
         }
-        return jdbcTemplate.batchUpdate(sql, batchArgs);
-    }
-
-    /**
-     * 查询单条记录。
-     *
-     * @param sql       SQL 语句
-     * @param rowMapper 行映射器
-     * @param params    参数
-     * @return 查询结果，不存在时返回 null
-     */
-    public <T> T queryOne(String sql, RowMapper<T> rowMapper, Object... params) {
-        List<T> list = queryList(sql, rowMapper, params);
-        return list.isEmpty() ? null : list.get(0);
-    }
-
-    /**
-     * 查询列表。
-     *
-     * @param sql       SQL 语句
-     * @param rowMapper 行映射器
-     * @param params    参数
-     * @return 列表结果
-     */
-    public <T> List<T> queryList(String sql, RowMapper<T> rowMapper, Object... params) {
-        try {
-            return jdbcTemplate.query(sql, rowMapper, params);
-        } catch (Exception e) {
-            log.error("MySQL 查询失败, sql: {}", sql, e);
-            return Collections.emptyList();
+        int affectedRows = 0;
+        for (T entity : entities) {
+            affectedRows += mapper.insert(entity);
         }
+        return affectedRows;
     }
 
     /**
-     * 执行快速可用性探测（select 1）。
-     *
-     * @return 数据库可访问返回 true
+     * 根据主键更新。
      */
-    public boolean ping() {
-        Integer result = jdbcTemplate.queryForObject("select 1", Integer.class);
-        return result != null && result == 1;
+    public <T> int updateById(BaseMapper<T> mapper, T entity) {
+        return mapper.updateById(entity);
+    }
+
+    /**
+     * 根据主键查询。
+     */
+    public <T> T selectById(BaseMapper<T> mapper, Serializable id) {
+        return mapper.selectById(id);
+    }
+
+    /**
+     * 按条件查询列表。
+     */
+    public <T> List<T> selectList(BaseMapper<T> mapper, Consumer<LambdaQueryWrapper<T>> wrapperCustomizer) {
+        LambdaQueryWrapper<T> wrapper = new LambdaQueryWrapper<>();
+        if (wrapperCustomizer != null) {
+            wrapperCustomizer.accept(wrapper);
+        }
+        List<T> list = mapper.selectList(wrapper);
+        return list == null ? Collections.emptyList() : list;
+    }
+
+    /**
+     * 分页查询。
+     */
+    public <T> Page<T> selectPage(BaseMapper<T> mapper,
+                                  long pageNo,
+                                  long pageSize,
+                                  Consumer<LambdaQueryWrapper<T>> wrapperCustomizer) {
+        LambdaQueryWrapper<T> wrapper = new LambdaQueryWrapper<>();
+        if (wrapperCustomizer != null) {
+            wrapperCustomizer.accept(wrapper);
+        }
+        Page<T> page = new Page<>(pageNo, pageSize);
+        return mapper.selectPage(page, wrapper);
+    }
+
+    /**
+     * 根据主键删除。
+     */
+    public <T> int deleteById(BaseMapper<T> mapper, Serializable id) {
+        return mapper.deleteById(id);
+    }
+
+    /**
+     * 统计数量。
+     */
+    public <T> long count(BaseMapper<T> mapper, Consumer<LambdaQueryWrapper<T>> wrapperCustomizer) {
+        LambdaQueryWrapper<T> wrapper = new LambdaQueryWrapper<>();
+        if (wrapperCustomizer != null) {
+            wrapperCustomizer.accept(wrapper);
+        }
+        Long count = mapper.selectCount(wrapper);
+        return count == null ? 0L : count;
     }
 }
