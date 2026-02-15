@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  * {@code com.cyber.tank.common.cache.utils.RedisService}，能力更完整。
  */
 @Deprecated
-@Component
+@Component("coreRedisService")
 @RequiredArgsConstructor
 public class RedisService {
 
