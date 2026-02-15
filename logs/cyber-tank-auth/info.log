@@ -4834,7 +4834,7 @@ java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 5 millisec
 2026-02-06 09:21:38.962 ERROR [] [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client : Send request fail, request = InstanceRequest{headers={app=unknown}, requestId='null'}, retryTimes = 1, errorMessage = Client not connected, current status:UNHEALTHY
 2026-02-06 09:21:39.062 ERROR [] [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client : Send request fail, request = InstanceRequest{headers={app=unknown}, requestId='null'}, retryTimes = 2, errorMessage = Client not connected, current status:UNHEALTHY
 2026-02-06 09:21:39.167 ERROR [] [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client : Send request fail, request = InstanceRequest{headers={app=unknown}, requestId='null'}, retryTimes = 3, errorMessage = Client not connected, current status:UNHEALTHY
-2026-02-06 09:21:39.185 ERROR [] [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry : ERR_NACOS_DEREGISTER, de-register failed...NacosRegistration{nacosDiscoveryProperties=NacosDiscoveryProperties{serverAddr='100.125.87.114:30848', username='', password='', endpoint='', namespace='9c7fb8cb-9787-4bb6-b861-3bbee4024c7f', watchDelay=30000, logName='', service='cyber-tank-auth', weight=1.0, clusterName='DEFAULT', group='DEFAULT_GROUP', namingLoadCacheAtStart='false', metadata={IPv6=[240e:36f:446:7f00:3d13:b444:770:6934], preserved.register.source=SPRING_CLOUD}, registerEnabled=true, ip='192.168.1.104', networkInterface='', port=1001, secure=false, accessKey='', secretKey='', heartBeatInterval=null, heartBeatTimeout=null, ipDeleteTimeout=null, instanceEnabled=true, ephemeral=true, failureToleranceEnabled=false}, ipDeleteTimeout=null, failFast=true}},
+2026-02-06 09:21:39.185 ERROR [] [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry : ERR_NACOS_DEREGISTER, de-register failed...NacosRegistration{nacosDiscoveryProperties=NacosDiscoveryProperties{serverAddr='100.125.87.114:30848', username='', password='', endpoint='', namespace='6173b996-a9ad-4f6c-a553-82ab6efcbf93', watchDelay=30000, logName='', service='cyber-tank-auth', weight=1.0, clusterName='DEFAULT', group='DEFAULT_GROUP', namingLoadCacheAtStart='false', metadata={IPv6=[240e:36f:446:7f00:3d13:b444:770:6934], preserved.register.source=SPRING_CLOUD}, registerEnabled=true, ip='192.168.1.104', networkInterface='', port=1001, secure=false, accessKey='', secretKey='', heartBeatInterval=null, heartBeatTimeout=null, ipDeleteTimeout=null, instanceEnabled=true, ephemeral=true, failureToleranceEnabled=false}, ipDeleteTimeout=null, failFast=true}},
 com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
 	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:644)
 	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:623)
@@ -5248,7 +5248,7 @@ Caused by: java.net.ConnectException: Connection refused
 	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:840)
 2026-02-08 12:54:44.394 ERROR [] [main] com.alibaba.nacos.common.remote.client : Send request fail, request = ConfigQueryRequest{headers={charset=UTF-8, Client-AppName=unknown, Client-RequestToken=62369e37921e778bc5ffe591391e0f5a, Client-RequestTS=1770526483963, exConfigInfo=true, notify=false}, requestId='null'}, retryTimes = 3, errorMessage = Client not connected, current status:STARTING
-2026-02-08 12:54:44.394 WARN  [] [main] c.a.n.client.config.NacosConfigService : [fixed-9c7fb8cb-9787-4bb6-b861-3bbee4024c7f-100.125.87.114_30848] [get-config] get from server error, dataId=cyber-tank-common.yaml, group=DEFAULT_GROUP, tenant=9c7fb8cb-9787-4bb6-b861-3bbee4024c7f, msg=ErrCode:-401, ErrMsg:Client not connected, current status:STARTING
+2026-02-08 12:54:44.394 WARN  [] [main] c.a.n.client.config.NacosConfigService : [fixed-6173b996-a9ad-4f6c-a553-82ab6efcbf93-100.125.87.114_30848] [get-config] get from server error, dataId=cyber-tank-common.yaml, group=DEFAULT_GROUP, tenant=6173b996-a9ad-4f6c-a553-82ab6efcbf93, msg=ErrCode:-401, ErrMsg:Client not connected, current status:STARTING
 2026-02-08 12:54:44.395 WARN  [] [main] c.a.c.n.c.NacosPropertySourceBuilder : Ignore the empty nacos configuration and get it based on dataId[cyber-tank-common.yaml] & group[DEFAULT_GROUP]
 2026-02-08 12:54:44.500 ERROR [] [main] com.alibaba.nacos.common.remote.client : Send request fail, request = ConfigQueryRequest{headers={charset=UTF-8, Client-AppName=unknown, Client-RequestToken=c3b1ef92c01c816605066fa160a84b42, Client-RequestTS=1770526484395, exConfigInfo=true, notify=false}, requestId='null'}, retryTimes = 0, errorMessage = Client not connected, current status:STARTING
 2026-02-08 12:54:44.605 ERROR [] [main] com.alibaba.nacos.common.remote.client : Send request fail, request = ConfigQueryRequest{headers={charset=UTF-8, Client-AppName=unknown, Client-RequestToken=c3b1ef92c01c816605066fa160a84b42, Client-RequestTS=1770526484395, exConfigInfo=true, notify=false}, requestId='null'}, retryTimes = 1, errorMessage = Client not connected, current status:STARTING
@@ -5296,7 +5296,7 @@ Caused by: java.net.ConnectException: Connection refused
 	at java.base/java.lang.Thread.run(Thread.java:840)
 2026-02-08 12:54:44.711 ERROR [] [main] com.alibaba.nacos.common.remote.client : Send request fail, request = ConfigQueryRequest{headers={charset=UTF-8, Client-AppName=unknown, Client-RequestToken=c3b1ef92c01c816605066fa160a84b42, Client-RequestTS=1770526484395, exConfigInfo=true, notify=false}, requestId='null'}, retryTimes = 2, errorMessage = Client not connected, current status:STARTING
 2026-02-08 12:54:44.816 ERROR [] [main] com.alibaba.nacos.common.remote.client : Send request fail, request = ConfigQueryRequest{headers={charset=UTF-8, Client-AppName=unknown, Client-RequestToken=c3b1ef92c01c816605066fa160a84b42, Client-RequestTS=1770526484395, exConfigInfo=true, notify=false}, requestId='null'}, retryTimes = 3, errorMessage = Client not connected, current status:STARTING
-2026-02-08 12:54:44.816 WARN  [] [main] c.a.n.client.config.NacosConfigService : [fixed-9c7fb8cb-9787-4bb6-b861-3bbee4024c7f-100.125.87.114_30848] [get-config] get from server error, dataId=cyber-tank-auth, group=DEFAULT_GROUP, tenant=9c7fb8cb-9787-4bb6-b861-3bbee4024c7f, msg=ErrCode:-401, ErrMsg:Client not connected, current status:STARTING
+2026-02-08 12:54:44.816 WARN  [] [main] c.a.n.client.config.NacosConfigService : [fixed-6173b996-a9ad-4f6c-a553-82ab6efcbf93-100.125.87.114_30848] [get-config] get from server error, dataId=cyber-tank-auth, group=DEFAULT_GROUP, tenant=6173b996-a9ad-4f6c-a553-82ab6efcbf93, msg=ErrCode:-401, ErrMsg:Client not connected, current status:STARTING
 2026-02-08 12:54:44.816 WARN  [] [main] c.a.c.n.c.NacosPropertySourceBuilder : Ignore the empty nacos configuration and get it based on dataId[cyber-tank-auth] & group[DEFAULT_GROUP]
 2026-02-08 12:54:44.917 ERROR [] [main] com.alibaba.nacos.common.remote.client : Send request fail, request = ConfigQueryRequest{headers={charset=UTF-8, Client-AppName=unknown, Client-RequestToken=bf73c49eb42988aeab029c1b798e763d, Client-RequestTS=1770526484816, exConfigInfo=true, notify=false}, requestId='null'}, retryTimes = 0, errorMessage = Client not connected, current status:STARTING
 2026-02-08 12:54:45.022 ERROR [] [main] com.alibaba.nacos.common.remote.client : Send request fail, request = ConfigQueryRequest{headers={charset=UTF-8, Client-AppName=unknown, Client-RequestToken=bf73c49eb42988aeab029c1b798e763d, Client-RequestTS=1770526484816, exConfigInfo=true, notify=false}, requestId='null'}, retryTimes = 1, errorMessage = Client not connected, current status:STARTING
@@ -5344,7 +5344,7 @@ Caused by: java.net.ConnectException: Connection refused
 	at java.base/java.lang.Thread.run(Thread.java:840)
 2026-02-08 12:54:45.127 ERROR [] [main] com.alibaba.nacos.common.remote.client : Send request fail, request = ConfigQueryRequest{headers={charset=UTF-8, Client-AppName=unknown, Client-RequestToken=bf73c49eb42988aeab029c1b798e763d, Client-RequestTS=1770526484816, exConfigInfo=true, notify=false}, requestId='null'}, retryTimes = 2, errorMessage = Client not connected, current status:STARTING
 2026-02-08 12:54:45.233 ERROR [] [main] com.alibaba.nacos.common.remote.client : Send request fail, request = ConfigQueryRequest{headers={charset=UTF-8, Client-AppName=unknown, Client-RequestToken=bf73c49eb42988aeab029c1b798e763d, Client-RequestTS=1770526484816, exConfigInfo=true, notify=false}, requestId='null'}, retryTimes = 3, errorMessage = Client not connected, current status:STARTING
-2026-02-08 12:54:45.233 WARN  [] [main] c.a.n.client.config.NacosConfigService : [fixed-9c7fb8cb-9787-4bb6-b861-3bbee4024c7f-100.125.87.114_30848] [get-config] get from server error, dataId=cyber-tank-auth.yaml, group=DEFAULT_GROUP, tenant=9c7fb8cb-9787-4bb6-b861-3bbee4024c7f, msg=ErrCode:-401, ErrMsg:Client not connected, current status:STARTING
+2026-02-08 12:54:45.233 WARN  [] [main] c.a.n.client.config.NacosConfigService : [fixed-6173b996-a9ad-4f6c-a553-82ab6efcbf93-100.125.87.114_30848] [get-config] get from server error, dataId=cyber-tank-auth.yaml, group=DEFAULT_GROUP, tenant=6173b996-a9ad-4f6c-a553-82ab6efcbf93, msg=ErrCode:-401, ErrMsg:Client not connected, current status:STARTING
 2026-02-08 12:54:45.233 WARN  [] [main] c.a.c.n.c.NacosPropertySourceBuilder : Ignore the empty nacos configuration and get it based on dataId[cyber-tank-auth.yaml] & group[DEFAULT_GROUP]
 2026-02-08 12:54:45.236 INFO  [] [main] c.cyber.tank.AuthEngineStartApplication : No active profile set, falling back to 1 default profile: "default"
 2026-02-08 12:54:45.551 ERROR [] [com.alibaba.nacos.client.remote.worker.1] c.a.n.c.remote.client.grpc.GrpcClient : Server check fail, please check server 100.125.87.114 ,port 31848 is available , error ={}
@@ -5885,7 +5885,7 @@ Caused by: java.net.ConnectException: Connection refused
 	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:840)
 2026-02-08 12:54:46.513 ERROR [] [main] com.alibaba.nacos.common.remote.client : Send request fail, request = InstanceRequest{headers={app=unknown}, requestId='null'}, retryTimes = 3, errorMessage = Client not connected, current status:STARTING
-2026-02-08 12:54:46.527 ERROR [] [main] c.a.c.n.registry.NacosServiceRegistry : nacos registry, cyber-tank-auth register failed...NacosRegistration{nacosDiscoveryProperties=NacosDiscoveryProperties{serverAddr='100.125.87.114:30848', username='', password='', endpoint='', namespace='9c7fb8cb-9787-4bb6-b861-3bbee4024c7f', watchDelay=30000, logName='', service='cyber-tank-auth', weight=1.0, clusterName='DEFAULT', group='DEFAULT_GROUP', namingLoadCacheAtStart='false', metadata={IPv6=[240e:36f:437:7840:e9dd:ab8c:4f4f:ec5e], preserved.register.source=SPRING_CLOUD}, registerEnabled=true, ip='192.168.1.104', networkInterface='', port=8080, secure=false, accessKey='', secretKey='', heartBeatInterval=null, heartBeatTimeout=null, ipDeleteTimeout=null, instanceEnabled=true, ephemeral=true, failureToleranceEnabled=false}, ipDeleteTimeout=null, failFast=true}},
+2026-02-08 12:54:46.527 ERROR [] [main] c.a.c.n.registry.NacosServiceRegistry : nacos registry, cyber-tank-auth register failed...NacosRegistration{nacosDiscoveryProperties=NacosDiscoveryProperties{serverAddr='100.125.87.114:30848', username='', password='', endpoint='', namespace='6173b996-a9ad-4f6c-a553-82ab6efcbf93', watchDelay=30000, logName='', service='cyber-tank-auth', weight=1.0, clusterName='DEFAULT', group='DEFAULT_GROUP', namingLoadCacheAtStart='false', metadata={IPv6=[240e:36f:437:7840:e9dd:ab8c:4f4f:ec5e], preserved.register.source=SPRING_CLOUD}, registerEnabled=true, ip='192.168.1.104', networkInterface='', port=8080, secure=false, accessKey='', secretKey='', heartBeatInterval=null, heartBeatTimeout=null, ipDeleteTimeout=null, instanceEnabled=true, ephemeral=true, failureToleranceEnabled=false}, ipDeleteTimeout=null, failFast=true}},
 com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:STARTING
 	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:644)
 	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:623)
@@ -7096,3 +7096,110 @@ java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 5 millisec
 2026-02-08 13:36:38.867 WARN  [] [Thread-7] c.a.nacos.common.notify.NotifyCenter : [NotifyCenter] Start destroying Publisher
 2026-02-08 13:36:38.867 WARN  [] [Thread-7] c.a.nacos.common.notify.NotifyCenter : [NotifyCenter] Destruction of the end
 2026-02-08 13:36:38.867 WARN  [] [Thread-3] c.a.n.common.http.HttpClientBeanHolder : [HttpClientBeanHolder] Destruction of the end
+2026-02-15 15:29:34.424 INFO  [] [background-preinit] o.h.validator.internal.util.Version : HV000001: Hibernate Validator 8.0.1.Final
+2026-02-15 15:29:35.828 WARN  [] [main] c.a.c.n.c.NacosPropertySourceBuilder : Ignore the empty nacos configuration and get it based on dataId[cyber-tank-auth] & group[DEFAULT_GROUP]
+2026-02-15 15:29:35.846 INFO  [] [main] c.cyber.tank.AuthEngineStartApplication : No active profile set, falling back to 1 default profile: "default"
+2026-02-15 15:29:35.904 WARN  [] [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.cyber.tank.AuthEngineStartApplication]
+2026-02-15 15:29:35.937 ERROR [] [main] o.s.boot.SpringApplication : Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.cyber.tank.AuthEngineStartApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:179)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:416)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.cyber.tank.AuthEngineStartApplication.main(AuthEngineStartApplication.java:17)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'redisService' for bean class [com.cyber.tank.common.cache.utils.RedisService] conflicts with existing, non-compatible bean definition of same name and class [com.cyber.tank.common.core.utils.RedisService]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:306)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:246)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:197)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:165)
+	... 13 common frames omitted
+2026-02-15 15:29:35.940 WARN  [] [Thread-7] c.a.nacos.common.notify.NotifyCenter : [NotifyCenter] Start destroying Publisher
+2026-02-15 15:29:35.940 WARN  [] [Thread-3] c.a.n.common.http.HttpClientBeanHolder : [HttpClientBeanHolder] Start destroying common HttpClient
+2026-02-15 15:29:35.940 WARN  [] [Thread-7] c.a.nacos.common.notify.NotifyCenter : [NotifyCenter] Destruction of the end
+2026-02-15 15:30:00.642 INFO  [] [background-preinit] o.h.validator.internal.util.Version : HV000001: Hibernate Validator 8.0.1.Final
+2026-02-15 15:30:02.126 WARN  [] [main] c.a.c.n.c.NacosPropertySourceBuilder : Ignore the empty nacos configuration and get it based on dataId[cyber-tank-auth] & group[DEFAULT_GROUP]
+2026-02-15 15:30:02.143 INFO  [] [main] c.cyber.tank.AuthEngineStartApplication : No active profile set, falling back to 1 default profile: "default"
+2026-02-15 15:30:02.199 WARN  [] [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.cyber.tank.AuthEngineStartApplication]
+2026-02-15 15:30:02.233 ERROR [] [main] o.s.boot.SpringApplication : Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.cyber.tank.AuthEngineStartApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:179)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:416)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.cyber.tank.AuthEngineStartApplication.main(AuthEngineStartApplication.java:17)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'redisService' for bean class [com.cyber.tank.common.cache.utils.RedisService] conflicts with existing, non-compatible bean definition of same name and class [com.cyber.tank.common.core.utils.RedisService]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:306)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:246)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:197)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:165)
+	... 13 common frames omitted
+2026-02-15 15:30:02.236 WARN  [] [Thread-3] c.a.n.common.http.HttpClientBeanHolder : [HttpClientBeanHolder] Start destroying common HttpClient
+2026-02-15 15:30:02.236 WARN  [] [Thread-7] c.a.nacos.common.notify.NotifyCenter : [NotifyCenter] Start destroying Publisher
+2026-02-15 15:30:02.236 WARN  [] [Thread-7] c.a.nacos.common.notify.NotifyCenter : [NotifyCenter] Destruction of the end
+2026-02-15 15:30:02.237 WARN  [] [Thread-3] c.a.n.common.http.HttpClientBeanHolder : [HttpClientBeanHolder] Destruction of the end
+2026-02-15 15:33:24.662 INFO  [] [background-preinit] o.h.validator.internal.util.Version : HV000001: Hibernate Validator 8.0.1.Final
+2026-02-15 15:33:26.077 WARN  [] [main] c.a.c.n.c.NacosPropertySourceBuilder : Ignore the empty nacos configuration and get it based on dataId[cyber-tank-auth] & group[DEFAULT_GROUP]
+2026-02-15 15:33:26.092 INFO  [] [main] c.cyber.tank.AuthEngineStartApplication : No active profile set, falling back to 1 default profile: "default"
+2026-02-15 15:33:27.041 WARN  [] [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-02-15 15:33:27.044 WARN  [] [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-02-15 15:33:27.303 INFO  [] [main] o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-1001"]
+2026-02-15 15:33:27.304 INFO  [] [main] o.apache.catalina.core.StandardService : Starting service [Tomcat]
+2026-02-15 15:33:27.304 INFO  [] [main] o.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-02-15 15:33:27.381 INFO  [] [main] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2026-02-15 15:33:28.588 WARN  [] [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-02-15 15:33:28.611 INFO  [] [main] o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-1001"]
+2026-02-15 15:33:28.775 INFO  [] [main] c.a.c.n.registry.NacosServiceRegistry : nacos registry, DEFAULT_GROUP cyber-tank-auth 100.91.55.9:1001 register finished
+2026-02-15 15:33:28.824 INFO  [] [main] c.cyber.tank.AuthEngineStartApplication : Started AuthEngineStartApplication in 4.785 seconds (process running for 5.159)
+2026-02-15 15:33:28.839 INFO  [] [main] c.a.c.n.refresh.NacosContextRefresher : [Nacos Config] Listening config: dataId=cyber-tank-common.yaml, group=DEFAULT_GROUP
+2026-02-15 15:33:28.839 INFO  [] [main] c.a.c.n.refresh.NacosContextRefresher : [Nacos Config] Listening config: dataId=cyber-tank-auth, group=DEFAULT_GROUP
+2026-02-15 15:33:28.851 INFO  [] [main] c.a.c.n.refresh.NacosContextRefresher : [Nacos Config] Listening config: dataId=cyber-tank-auth.yaml, group=DEFAULT_GROUP
+2026-02-15 15:34:26.670 WARN  [] [Thread-7] c.a.nacos.common.notify.NotifyCenter : [NotifyCenter] Start destroying Publisher
+2026-02-15 15:34:26.670 WARN  [] [Thread-3] c.a.n.common.http.HttpClientBeanHolder : [HttpClientBeanHolder] Start destroying common HttpClient
+2026-02-15 15:34:26.670 WARN  [] [Thread-7] c.a.nacos.common.notify.NotifyCenter : [NotifyCenter] Destruction of the end
+2026-02-15 15:34:26.671 WARN  [] [Thread-3] c.a.n.common.http.HttpClientBeanHolder : [HttpClientBeanHolder] Destruction of the end
+2026-02-15 15:34:26.690 INFO  [] [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry : De-registering from Nacos Server now...
+2026-02-15 15:34:26.696 INFO  [] [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry : De-registration finished.
+2026-02-15 15:34:26.697 WARN  [] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming : [NamingHttpClientManager] Start destroying NacosRestTemplate
+2026-02-15 15:34:26.697 WARN  [] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming : [NamingHttpClientManager] Destruction of the end
+2026-02-15 15:34:26.697 WARN  [] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming : [NamingHttpClientManager] Start destroying NacosRestTemplate
+2026-02-15 15:34:26.697 WARN  [] [SpringApplicationShutdownHook] com.alibaba.nacos.client.naming : [NamingHttpClientManager] Destruction of the end
+2026-02-15 15:34:29.095 INFO  [] [background-preinit] o.h.validator.internal.util.Version : HV000001: Hibernate Validator 8.0.1.Final
+2026-02-15 15:34:30.505 WARN  [] [main] c.a.c.n.c.NacosPropertySourceBuilder : Ignore the empty nacos configuration and get it based on dataId[cyber-tank-auth] & group[DEFAULT_GROUP]
+2026-02-15 15:34:30.521 INFO  [] [main] c.cyber.tank.AuthEngineStartApplication : No active profile set, falling back to 1 default profile: "default"
+2026-02-15 15:34:31.487 WARN  [] [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-02-15 15:34:31.489 WARN  [] [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-02-15 15:34:31.752 INFO  [] [main] o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-1001"]
+2026-02-15 15:34:31.754 INFO  [] [main] o.apache.catalina.core.StandardService : Starting service [Tomcat]
+2026-02-15 15:34:31.754 INFO  [] [main] o.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-02-15 15:34:31.833 INFO  [] [main] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2026-02-15 15:34:33.045 WARN  [] [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-02-15 15:34:33.069 INFO  [] [main] o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-1001"]
+2026-02-15 15:34:33.240 INFO  [] [main] c.a.c.n.registry.NacosServiceRegistry : nacos registry, DEFAULT_GROUP cyber-tank-auth 100.91.55.9:1001 register finished
+2026-02-15 15:34:33.291 INFO  [] [main] c.cyber.tank.AuthEngineStartApplication : Started AuthEngineStartApplication in 4.813 seconds (process running for 5.206)
+2026-02-15 15:34:33.308 INFO  [] [main] c.a.c.n.refresh.NacosContextRefresher : [Nacos Config] Listening config: dataId=cyber-tank-common.yaml, group=DEFAULT_GROUP
+2026-02-15 15:34:33.309 INFO  [] [main] c.a.c.n.refresh.NacosContextRefresher : [Nacos Config] Listening config: dataId=cyber-tank-auth, group=DEFAULT_GROUP
+2026-02-15 15:34:33.311 INFO  [] [main] c.a.c.n.refresh.NacosContextRefresher : [Nacos Config] Listening config: dataId=cyber-tank-auth.yaml, group=DEFAULT_GROUP

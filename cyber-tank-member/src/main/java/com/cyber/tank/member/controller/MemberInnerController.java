@@ -2,7 +2,6 @@ package com.cyber.tank.member.controller;
 
 import com.cyber.tank.common.core.domain.Result;
 import com.cyber.tank.common.core.exception.ServiceException;
-import com.cyber.tank.common.core.utils.RedisService;
 import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
