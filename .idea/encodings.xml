@@ -7,8 +7,12 @@
     <file url="file://$PROJECT_DIR$/cyber-tank-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cyber-tank-auth/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cyber-tank-auth/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-cache/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-cache/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-core/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-db/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-db/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-mq/cyber-tank-common-mq-rabbit/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-mq/cyber-tank-common-mq-rabbit/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-mq/cyber-tank-common-mq-rocket/src/main/java" charset="UTF-8" />
@@ -39,5 +43,7 @@
     <file url="file://$PROJECT_DIR$/cyber-tank-member/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$APPLICATION_HOME_DIR$/bin/src/main/java" charset="UTF-8" />
+    <file url="file://$APPLICATION_HOME_DIR$/bin/src/main/resources" charset="UTF-8" />
   </component>
 </project>
