@@ -75,6 +75,11 @@
             </dependency>
             <dependency>
                 <groupId>com.cyber.tank</groupId>
+                <artifactId>cyber-tank-common-mq-rabbit</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cyber.tank</groupId>
                 <artifactId>cyber-tank-member-api</artifactId>
                 <version>${project.version}</version>
             </dependency>

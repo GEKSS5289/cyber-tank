@@ -1,6 +1,11 @@
 # cyber-tank-tool-test
 
-用于验证 `RedisService` 与 `MySqlService` 的功能测试模块。
+用于验证以下工具模块能力：
+
+- `RedisService`
+- `MySqlService`
+- `RabbitMqService`
+- `cyber-tank-common-core` 下常用 `utils`
 
 ## 前置条件
 
@@ -16,11 +21,12 @@ CREATE TABLE `user` (
 ```
 
 - Redis 可访问
+- （可选）RabbitMQ 可访问（当前 Rabbit 测试使用 MockBean，不强依赖真实实例）
 
 ## 执行测试
 
 ```bash
-mvn -pl cyber-tank-tool-test -Dtest=RedisAndMySqlToolsTest -Dtool.integration.enabled=true test
+mvn -pl cyber-tank-tool-test -Dtest=RedisAndMySqlToolsTest,RabbitMqAndCoreUtilsTest -Dtool.integration.enabled=true test
 ```
 
 可通过环境变量覆盖连接配置：
@@ -32,3 +38,7 @@ mvn -pl cyber-tank-tool-test -Dtest=RedisAndMySqlToolsTest -Dtool.integration.en
 - `TOOL_TEST_REDIS_HOST`
 - `TOOL_TEST_REDIS_PORT`
 - `TOOL_TEST_REDIS_PASSWORD`
+- `TOOL_TEST_RABBITMQ_HOST`
+- `TOOL_TEST_RABBITMQ_PORT`
+- `TOOL_TEST_RABBITMQ_USERNAME`
+- `TOOL_TEST_RABBITMQ_PASSWORD`
