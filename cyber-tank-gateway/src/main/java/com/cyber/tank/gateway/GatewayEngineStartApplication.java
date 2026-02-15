@@ -10,7 +10,14 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
+/**
+ * GatewayEngineStartApplication 的核心定义。
+ */
 public class GatewayEngineStartApplication {
+    /**
+     * main 方法。
+     * @param args 参数。
+     */
     public static void main(String[] args) {
         SpringApplication.run(GatewayEngineStartApplication.class, args);
         System.out.println("====================================================");

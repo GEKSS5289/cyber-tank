@@ -12,9 +12,16 @@ import org.springframework.web.util.pattern.PathPatternParser;
  * 必须配置在网关层，后续微服务层不需要再处理跨域
  */
 @Configuration
+/**
+ * CorsConfig 的核心定义。
+ */
 public class CorsConfig {
 
     @Bean
+    /**
+     * corsFilter 方法。
+     * @return 执行结果。
+     */
     public CorsWebFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
         // 允许所有方法 (GET, POST, PUT, DELETE...)

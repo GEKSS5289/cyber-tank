@@ -10,10 +10,18 @@ import lombok.NoArgsConstructor;
  * JSON 工具类。
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
+/**
+ * JsonUtils 的核心定义。
+ */
 public final class JsonUtils {
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
+    /**
+     * toJson 方法。
+     * @param obj 参数。
+     * @return 执行结果。
+     */
     public static String toJson(Object obj) {
         try {
             return OBJECT_MAPPER.writeValueAsString(obj);
@@ -22,6 +30,12 @@ public final class JsonUtils {
         }
     }
 
+    /**
+     * toObject 方法。
+     * @param json 参数。
+     * @param clazz 参数。
+     * @return 执行结果。
+     */
     public static <T> T toObject(String json, Class<T> clazz) {
         try {
             return OBJECT_MAPPER.readValue(json, clazz);
@@ -30,6 +44,12 @@ public final class JsonUtils {
         }
     }
 
+    /**
+     * toObject 方法。
+     * @param json 参数。
+     * @param typeReference 参数。
+     * @return 执行结果。
+     */
     public static <T> T toObject(String json, TypeReference<T> typeReference) {
         try {
             return OBJECT_MAPPER.readValue(json, typeReference);

@@ -23,12 +23,21 @@ import java.util.Map;
  */
 @Component
 @RequiredArgsConstructor
+/**
+ * AuthFilter 的核心定义。
+ */
 public class AuthFilter implements GlobalFilter, Ordered {
 
     private static final AntPathMatcher PATH_MATCHER = new AntPathMatcher();
     private final IgnoreWhiteConfig ignoreWhiteConfig;
 
     @Override
+    /**
+     * filter 方法。
+     * @param exchange 参数。
+     * @param chain 参数。
+     * @return 执行结果。
+     */
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         String path = exchange.getRequest().getURI().getPath();
 
@@ -52,11 +61,21 @@ public class AuthFilter implements GlobalFilter, Ordered {
         }
     }
 
+    /**
+     * isWhiteList 方法。
+     * @param path 参数。
+     * @return 执行结果。
+     */
     private boolean isWhiteList(String path) {
         List<String> whites = ignoreWhiteConfig.getWhites();
         return whites != null && whites.stream().anyMatch(p -> PATH_MATCHER.match(p, path));
     }
 
+    /**
+     * extractToken 方法。
+     * @param request 参数。
+     * @return 执行结果。
+     */
     private String extractToken(ServerHttpRequest request) {
         String authHeader = request.getHeaders().getFirst(SecurityConstants.AUTHORIZATION);
         if (StringUtils.hasText(authHeader) && authHeader.startsWith("Bearer ")) {
@@ -65,6 +84,13 @@ public class AuthFilter implements GlobalFilter, Ordered {
         return null;
     }
 
+    /**
+     * proceedWithUser 方法。
+     * @param exchange 参数。
+     * @param chain 参数。
+     * @param claims 参数。
+     * @return 执行结果。
+     */
     private Mono<Void> proceedWithUser(ServerWebExchange exchange, GatewayFilterChain chain, Map<String, Object> claims) {
         ServerHttpRequest mutatedRequest = exchange.getRequest().mutate()
                 .header(SecurityConstants.DETAILS_USER_ID, getClaim(claims, SecurityConstants.DETAILS_USER_ID))
@@ -75,17 +101,32 @@ public class AuthFilter implements GlobalFilter, Ordered {
         return chain.filter(exchange.mutate().request(mutatedRequest).build());
     }
 
+    /**
+     * getClaim 方法。
+     * @param claims 参数。
+     * @param key 参数。
+     * @return 执行结果。
+     */
     private String getClaim(Map<String, Object> claims, String key) {
         Object value = claims.get(key);
         return value == null ? "" : value.toString();
     }
 
+    /**
+     * unAuthorized 方法。
+     * @param exchange 参数。
+     * @return 执行结果。
+     */
     private Mono<Void> unAuthorized(ServerWebExchange exchange) {
         exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
         return exchange.getResponse().setComplete();
     }
 
     @Override
+    /**
+     * getOrder 方法。
+     * @return 执行结果。
+     */
     public int getOrder() {
         return -100;
     }

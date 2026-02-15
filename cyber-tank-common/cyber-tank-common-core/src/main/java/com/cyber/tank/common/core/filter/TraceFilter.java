@@ -19,6 +19,9 @@ import java.io.IOException;
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
+/**
+ * TraceFilter 的核心定义。
+ */
 public class TraceFilter implements Filter {
 
     @Override

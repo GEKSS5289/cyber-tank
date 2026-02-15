@@ -9,7 +9,14 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @EnableDiscoveryClient
 @SpringBootApplication
+/**
+ * MemberEngineStartApplication 的核心定义。
+ */
 public class MemberEngineStartApplication {
+    /**
+     * main 方法。
+     * @param args 参数。
+     */
     public static void main(String[] args) {
         SpringApplication.run(MemberEngineStartApplication.class, args);
         System.out.println("====================================================");

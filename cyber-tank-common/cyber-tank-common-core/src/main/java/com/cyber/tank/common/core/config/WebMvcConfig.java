@@ -7,6 +7,9 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
+/**
+ * WebMvcConfig 的核心定义。
+ */
 public class WebMvcConfig implements WebMvcConfigurer {
 
     /**
@@ -21,6 +24,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
     };
 
     @Override
+    /**
+     * addInterceptors 方法。
+     * @param registry 参数。
+     */
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new UserHeaderInterceptor())
                 .addPathPatterns("/**")

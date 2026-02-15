@@ -21,11 +21,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/v1/members")
 @RequiredArgsConstructor
+/**
+ * MemberController 的核心定义。
+ */
 public class MemberController {
 
 
     @Operation(summary = "查询分页", description = "通过传入查询参数来得到分页数据")
     @PostMapping("/queryPage")
+    /**
+     * getById 方法。
+     * @return 执行结果。
+     */
     public Result<String> getById() {
         return Result.success("Sample Data: " );
     }

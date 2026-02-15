@@ -10,6 +10,9 @@ import java.util.List;
 @Component
 @RefreshScope
 @ConfigurationProperties(prefix = "security.ignore")
+/**
+ * IgnoreWhiteConfig 的核心定义。
+ */
 public class IgnoreWhiteConfig {
     /** 白名单列表 */
     private List<String> whites;

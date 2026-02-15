@@ -17,9 +17,18 @@ import reactor.core.publisher.Mono;
  */
 @Slf4j
 @Component
+/**
+ * GatewayTraceFilter 的核心定义。
+ */
 public class GatewayTraceFilter implements GlobalFilter, Ordered {
 
     @Override
+    /**
+     * filter 方法。
+     * @param exchange 参数。
+     * @param chain 参数。
+     * @return 执行结果。
+     */
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         // 1. 生成 TraceId
         String traceId = IdUtil.fastSimpleUUID();
@@ -45,6 +54,10 @@ public class GatewayTraceFilter implements GlobalFilter, Ordered {
     }
 
     @Override
+    /**
+     * getOrder 方法。
+     * @return 执行结果。
+     */
     public int getOrder() {
         return Ordered.HIGHEST_PRECEDENCE;
     }

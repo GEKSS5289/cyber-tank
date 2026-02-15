@@ -12,9 +12,16 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @MapperScan("com.cyber.tank")
+/**
+ * MybatisPlusConfig 的核心定义。
+ */
 public class MybatisPlusConfig {
 
     @Bean
+    /**
+     * mybatisPlusInterceptor 方法。
+     * @return 执行结果。
+     */
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
 

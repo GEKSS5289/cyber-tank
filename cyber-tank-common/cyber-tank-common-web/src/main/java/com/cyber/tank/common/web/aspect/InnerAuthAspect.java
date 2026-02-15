@@ -17,9 +17,16 @@ import org.springframework.util.StringUtils;
  */
 @Aspect
 @Component
+/**
+ * InnerAuthAspect 的核心定义。
+ */
 public class InnerAuthAspect implements Ordered {
 
     @Before("@annotation(innerAuth)")
+    /**
+     * doBefore 方法。
+     * @param innerAuth 参数。
+     */
     public void doBefore(InnerAuth innerAuth) {
         HttpServletRequest request = ServletUtils.getRequest();
 
@@ -68,6 +75,10 @@ public class InnerAuthAspect implements Ordered {
     }
 
     @Override
+    /**
+     * getOrder 方法。
+     * @return 执行结果。
+     */
     public int getOrder() {
         return Ordered.HIGHEST_PRECEDENCE + 1;
     }

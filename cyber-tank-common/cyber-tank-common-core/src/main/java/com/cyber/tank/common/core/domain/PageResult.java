@@ -14,6 +14,9 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * PageResult 的核心定义。
+ */
 public class PageResult<T> implements Serializable {
     private static final long serialVersionUID = 1L;
 

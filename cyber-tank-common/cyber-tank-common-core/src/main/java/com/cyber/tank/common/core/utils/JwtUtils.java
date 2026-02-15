@@ -24,6 +24,9 @@ import java.util.Objects;
  * 扩展功能：Bearer 处理、过期校验、便捷获取 UserID
  */
 @Slf4j
+/**
+ * JwtUtils 的核心定义。
+ */
 public class JwtUtils {
 
     // 建议后续将密钥移至配置文件 (yml) 中管理

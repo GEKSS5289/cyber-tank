@@ -15,12 +15,21 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 @Slf4j
+/**
+ * LogAspect 的核心定义。
+ */
 public class LogAspect {
 
     /**
      * 处理完请求后执行（正常返回）
      */
     @AfterReturning(pointcut = "@annotation(controllerLog)", returning = "jsonResult")
+    /**
+     * doAfterReturning 方法。
+     * @param joinPoint 参数。
+     * @param controllerLog 参数。
+     * @param jsonResult 参数。
+     */
     public void doAfterReturning(JoinPoint joinPoint, Log controllerLog, Object jsonResult) {
         handleLog(joinPoint, controllerLog, null, jsonResult);
     }
@@ -29,10 +38,23 @@ public class LogAspect {
      * 拦截异常操作
      */
     @AfterThrowing(value = "@annotation(controllerLog)", throwing = "e")
+    /**
+     * doAfterThrowing 方法。
+     * @param joinPoint 参数。
+     * @param controllerLog 参数。
+     * @param e 参数。
+     */
     public void doAfterThrowing(JoinPoint joinPoint, Log controllerLog, Exception e) {
         handleLog(joinPoint, controllerLog, e, null);
     }
 
+    /**
+     * handleLog 方法。
+     * @param joinPoint 参数。
+     * @param controllerLog 参数。
+     * @param e 参数。
+     * @param jsonResult 参数。
+     */
     protected void handleLog(final JoinPoint joinPoint, Log controllerLog, final Exception e, Object jsonResult) {
         try {
             // 1. 获取当前用户（从我们在 Core 写的 SecurityUtils 获取）

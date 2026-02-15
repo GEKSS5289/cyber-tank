@@ -6,6 +6,9 @@ import lombok.Data;
 
 @Data
 @TableName("user")
+/**
+ * ToolTestUser 的核心定义。
+ */
 public class ToolTestUser {
 
     @TableId

@@ -15,6 +15,9 @@ import java.util.function.Consumer;
  * MySQL 通用工具（基于 MyBatis-Plus 封装）。
  */
 @Component
+/**
+ * MySqlService 的核心定义。
+ */
 public class MySqlService {
 
     /**

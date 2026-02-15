@@ -18,9 +18,16 @@ import java.util.Objects;
  */
 // 注意：如果你使用了我之前建议的 FeignConfig 配置类方式，这里就不需要 @Component
 // 如果你没有用配置类，请保留 @Component
+/**
+ * FeignRequestInterceptor 的核心定义。
+ */
 public class FeignRequestInterceptor implements RequestInterceptor {
 
     @Override
+    /**
+     * apply 方法。
+     * @param template 参数。
+     */
     public void apply(RequestTemplate template) {
         // 1. 统一添加内部调用标识（防止外部直接访问内部接口）
         template.header(SecurityConstants.FROM_SOURCE, SecurityConstants.INTERNAL);
