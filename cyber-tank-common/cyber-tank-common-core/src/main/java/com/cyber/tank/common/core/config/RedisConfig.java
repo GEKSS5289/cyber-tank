@@ -9,9 +9,18 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Configuration
+/**
+ * RedisConfig 的核心定义。
+ */
 public class RedisConfig {
 
     @Bean
+    /**
+     * redisTemplate 方法。
+     * @param factory 参数。
+     * @param objectMapper 参数。
+     * @return 执行结果。
+     */
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory, ObjectMapper objectMapper) {
         RedisTemplate<String, Object> template = new RedisTemplate<>();
         template.setConnectionFactory(factory);

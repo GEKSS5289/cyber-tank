@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor
+/**
+ * AuthController 的核心定义。
+ */
 public class AuthController {
 
     private final AuthService authService;
@@ -24,6 +27,11 @@ public class AuthController {
      * 用户登录
      */
     @PostMapping("/login")
+    /**
+     * login 方法。
+     * @param loginForm 参数。
+     * @return 执行结果。
+     */
     public Result<String> login(@Validated @RequestBody UserLoginDTO loginForm) {
         String token = authService.login(loginForm.getUsername(), loginForm.getPassword());
         return Result.ok(token);

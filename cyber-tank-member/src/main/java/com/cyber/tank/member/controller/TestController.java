@@ -30,6 +30,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/v1/members")
 @RequiredArgsConstructor
+/**
+ * TestController 的核心定义。
+ */
 public class TestController {
 
     @Operation(summary = "根据ID获取用户信息", description = "传入用户长整型ID，返回脱敏后的用户信息")

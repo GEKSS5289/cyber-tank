@@ -12,6 +12,9 @@ import java.io.Serial;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * BaseException 的核心定义。
+ */
 public class BaseException extends RuntimeException {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -37,6 +40,10 @@ public class BaseException extends RuntimeException {
     private String defaultMessage;
 
     @Override
+    /**
+     * getMessage 方法。
+     * @return 执行结果。
+     */
     public String getMessage() {
         return defaultMessage;
     }

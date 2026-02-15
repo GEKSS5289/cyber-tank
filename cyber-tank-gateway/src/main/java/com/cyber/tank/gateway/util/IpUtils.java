@@ -3,9 +3,20 @@ package com.cyber.tank.gateway.util;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 
+/**
+ * IpUtils 的核心定义。
+ */
 public final class IpUtils {
+    /**
+     * 构造 IpUtils 实例。
+     */
     private IpUtils() {}
 
+    /**
+     * resolveClientIp 方法。
+     * @param request 参数。
+     * @return 执行结果。
+     */
     public static String resolveClientIp(ServerHttpRequest request) {
         HttpHeaders headers = request.getHeaders();
         String xff = headers.getFirst("X-Forwarded-For");

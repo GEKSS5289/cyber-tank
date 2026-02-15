@@ -23,6 +23,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest(classes = ToolIntegrationTestApplication.class)
 @ActiveProfiles("test")
 @EnabledIfSystemProperty(named = "tool.integration.enabled", matches = "true")
+/**
+ * RedisAndMySqlToolsTest 的核心定义。
+ */
 class RedisAndMySqlToolsTest {
 
     @Autowired

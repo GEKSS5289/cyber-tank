@@ -41,6 +41,9 @@ import static org.mockito.Mockito.when;
 @SpringBootTest(classes = ToolIntegrationTestApplication.class)
 @ActiveProfiles("test")
 @EnabledIfSystemProperty(named = "tool.integration.enabled", matches = "true")
+/**
+ * RabbitMqAndCoreUtilsTest 的核心定义。
+ */
 class RabbitMqAndCoreUtilsTest {
 
     @Autowired

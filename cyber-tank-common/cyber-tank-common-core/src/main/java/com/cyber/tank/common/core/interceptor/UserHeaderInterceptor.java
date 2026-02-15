@@ -13,9 +13,19 @@ import org.springframework.web.servlet.HandlerInterceptor;
  * 用户信息拦截器
  */
 @Slf4j
+/**
+ * UserHeaderInterceptor 的核心定义。
+ */
 public class UserHeaderInterceptor implements HandlerInterceptor {
 
     @Override
+    /**
+     * preHandle 方法。
+     * @param request 参数。
+     * @param response 参数。
+     * @param handler 参数。
+     * @return 执行结果。
+     */
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         String token = request.getHeader(SecurityConstants.AUTHORIZATION);
 
@@ -40,6 +50,13 @@ public class UserHeaderInterceptor implements HandlerInterceptor {
     }
 
     @Override
+    /**
+     * afterCompletion 方法。
+     * @param request 参数。
+     * @param response 参数。
+     * @param handler 参数。
+     * @param ex 参数。
+     */
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
         SecurityContextHolder.remove();
     }

@@ -12,6 +12,10 @@ public class InnerAuthException extends BaseException {
     @Serial
     private static final long serialVersionUID = 1L;
 
+    /**
+     * 构造 InnerAuthException 实例。
+     * @param message 参数。
+     */
     public InnerAuthException(String message) {
         super("auth", HttpStatus.UNAUTHORIZED.value(), null, message);
     }

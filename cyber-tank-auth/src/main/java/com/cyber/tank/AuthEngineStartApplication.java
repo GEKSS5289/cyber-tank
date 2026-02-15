@@ -12,7 +12,14 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableDiscoveryClient
 @SpringBootApplication
 @EnableFeignClients(basePackages = "com.cyber.tank.api")
+/**
+ * AuthEngineStartApplication 的核心定义。
+ */
 public class AuthEngineStartApplication {
+    /**
+     * main 方法。
+     * @param args 参数。
+     */
     public static void main(String[] args) {
         SpringApplication.run(AuthEngineStartApplication.class, args);
         System.out.println("====================================================");

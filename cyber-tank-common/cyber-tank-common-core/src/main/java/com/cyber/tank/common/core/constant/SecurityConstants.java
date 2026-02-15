@@ -1,5 +1,8 @@
 package com.cyber.tank.common.core.constant;
 
+/**
+ * SecurityConstants 的核心定义。
+ */
 public interface SecurityConstants {
     /**
      * 令牌前缀

@@ -30,6 +30,10 @@ public class ServletUtils {
         return getRequestAttributes().getResponse();
     }
 
+    /**
+     * getRequestAttributes 方法。
+     * @return 执行结果。
+     */
     public static ServletRequestAttributes getRequestAttributes() {
         return (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
     }

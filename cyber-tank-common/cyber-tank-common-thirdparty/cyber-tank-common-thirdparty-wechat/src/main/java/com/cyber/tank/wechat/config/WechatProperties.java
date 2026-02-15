@@ -10,6 +10,9 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 @ConfigurationProperties(prefix = "thirdparty.wechat")
+/**
+ * WechatProperties 的核心定义。
+ */
 public class WechatProperties {
 
     /**

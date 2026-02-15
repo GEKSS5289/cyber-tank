@@ -10,6 +10,9 @@ import java.io.Serial;
  * 业务异常
  */
 @Getter
+/**
+ * ServiceException 的核心定义。
+ */
 public final class ServiceException extends BaseException {
     @Serial
     private static final long serialVersionUID = 1L;

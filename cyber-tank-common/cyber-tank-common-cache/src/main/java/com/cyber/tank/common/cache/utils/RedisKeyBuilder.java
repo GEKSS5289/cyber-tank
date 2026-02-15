@@ -12,6 +12,9 @@ public final class RedisKeyBuilder {
 
     private static final String DELIMITER = ":";
 
+    /**
+     * 构造 RedisKeyBuilder 实例。
+     */
     private RedisKeyBuilder() {
     }
 

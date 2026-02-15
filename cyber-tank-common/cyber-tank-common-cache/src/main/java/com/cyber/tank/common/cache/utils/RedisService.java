@@ -16,6 +16,9 @@ import java.util.concurrent.TimeUnit;
  */
 @Component
 @RequiredArgsConstructor
+/**
+ * RedisService 的核心定义。
+ */
 public class RedisService {
 
     private final RedisTemplate<String, Object> redisTemplate;
@@ -38,6 +41,11 @@ public class RedisService {
      * 读取普通对象。
      */
     @SuppressWarnings("unchecked")
+    /**
+     * getObject 方法。
+     * @param key 参数。
+     * @return 执行结果。
+     */
     public <T> T getObject(String key) {
         return (T) redisTemplate.opsForValue().get(key);
     }
@@ -98,6 +106,12 @@ public class RedisService {
      * Hash 按字段读取。
      */
     @SuppressWarnings("unchecked")
+    /**
+     * getHashValue 方法。
+     * @param key 参数。
+     * @param hashKey 参数。
+     * @return 执行结果。
+     */
     public <T> T getHashValue(String key, String hashKey) {
         return (T) redisTemplate.opsForHash().get(key, hashKey);
     }

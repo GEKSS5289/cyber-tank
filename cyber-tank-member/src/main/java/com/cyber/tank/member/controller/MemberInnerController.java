@@ -15,12 +15,19 @@ import java.util.Map;
 @RequestMapping("/v1/members")
 @RequiredArgsConstructor
 @Slf4j
+/**
+ * MemberInnerController 的核心定义。
+ */
 public class MemberInnerController {
 
     @Resource
     private RedisService redisService;
 //    @InnerAuth(isUser = true)
     @GetMapping("/inner")
+    /**
+     * getUserInfo 方法。
+     * @return 执行结果。
+     */
     public Result<Map<String, Object>> getUserInfo() {
         Object shushhun = redisService.getObject("shushhun");
         log.info("{}",shushhun);

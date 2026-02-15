@@ -12,11 +12,18 @@ import java.util.TimeZone;
  * 统一 JSON 序列化配置
  */
 @Configuration
+/**
+ * JacksonConfig 的核心定义。
+ */
 public class JacksonConfig {
 
     private static final String DATETIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
     @Bean
+    /**
+     * jackson2ObjectMapperBuilderCustomizer 方法。
+     * @return 执行结果。
+     */
     public Jackson2ObjectMapperBuilderCustomizer jackson2ObjectMapperBuilderCustomizer() {
         return builder -> {
             // 1. 统一时区

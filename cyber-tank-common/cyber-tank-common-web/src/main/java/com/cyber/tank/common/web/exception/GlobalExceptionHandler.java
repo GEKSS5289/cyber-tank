@@ -17,6 +17,9 @@ import java.util.Objects;
  */
 @Slf4j
 @RestControllerAdvice
+/**
+ * GlobalExceptionHandler 的核心定义。
+ */
 public class GlobalExceptionHandler {
 
     /**
@@ -24,6 +27,12 @@ public class GlobalExceptionHandler {
      * 场景：AuthService 中抛出的 "密码错误"、"用户不存在"
      */
     @ExceptionHandler(ServiceException.class)
+    /**
+     * handleServiceException 方法。
+     * @param e 参数。
+     * @param request 参数。
+     * @return 执行结果。
+     */
     public Result<Void> handleServiceException(ServiceException e, HttpServletRequest request) {
         log.warn("业务异常 [{}]: {}", request.getRequestURI(), e.getMessage());
         return Result.fail(e.getCode(), e.getMessage());
@@ -34,6 +43,11 @@ public class GlobalExceptionHandler {
      * 场景：DTO 字段校验失败
      */
     @ExceptionHandler(MethodArgumentNotValidException.class)
+    /**
+     * handleValidationException 方法。
+     * @param e 参数。
+     * @return 执行结果。
+     */
     public Result<Void> handleValidationException(MethodArgumentNotValidException e) {
         String msg = Objects.requireNonNull(e.getBindingResult().getFieldError()).getDefaultMessage();
         log.warn("参数校验异常: {}", msg);
@@ -45,6 +59,12 @@ public class GlobalExceptionHandler {
      * 场景：接口只写了 @PostMapping，你却用 GET 请求
      */
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+    /**
+     * handleHttpRequestMethodNotSupported 方法。
+     * @param e 参数。
+     * @param request 参数。
+     * @return 执行结果。
+     */
     public Result<Void> handleHttpRequestMethodNotSupported(HttpRequestMethodNotSupportedException e, HttpServletRequest request) {
         log.warn("请求方式不支持 [{}]: {}", request.getRequestURI(), e.getMethod());
         return Result.fail(405, "不支持 " + e.getMethod() + " 请求");
@@ -55,6 +75,12 @@ public class GlobalExceptionHandler {
      * 场景：空指针、数据库连不上、代码 Bug
      */
     @ExceptionHandler(Exception.class)
+    /**
+     * handleException 方法。
+     * @param e 参数。
+     * @param request 参数。
+     * @return 执行结果。
+     */
     public Result<Void> handleException(Exception e, HttpServletRequest request) {
         // 打印完整堆栈信息，方便排查 Bug (配合之前的 TraceId)
         log.error("系统异常 [{}]: ", request.getRequestURI(), e);
