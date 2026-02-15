@@ -16,6 +16,7 @@
         <module>cyber-tank-auth</module>
         <module>cyber-tank-gateway</module>
         <module>cyber-tank-member</module>
+        <module>cyber-tank-message-center</module>
         <module>cyber-tank-tool-test</module>
     </modules>
 

@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: cyber-tank-message-center
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 100.125.87.114:30848
+        namespace: 6173b996-a9ad-4f6c-a553-82ab6efcbf93
+      config:
+        server-addr: 100.125.87.114:30848
+        namespace: 6173b996-a9ad-4f6c-a553-82ab6efcbf93
+        file-extension: yaml
+        shared-configs:
+          - data-id: cyber-tank-common.yaml
+            group: DEFAULT_GROUP
+            refresh: true
+
+cyber:
+  tank:
+    message-center:
+      rabbit:
+        exchange: cyber.tank.message.center.topic
+        queue: cyber.tank.message.center.queue
+        routing-key: cyber.tank.message.#
+        durable: true
