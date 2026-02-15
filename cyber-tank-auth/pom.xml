@@ -23,7 +23,6 @@
         <dependency>
             <groupId>com.cyber.tank</groupId>
             <artifactId>cyber-tank-member-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -47,8 +46,8 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <groupId>com.cyber.tank</groupId>
+            <artifactId>cyber-tank-common-cache</artifactId>
         </dependency>
     </dependencies>
 

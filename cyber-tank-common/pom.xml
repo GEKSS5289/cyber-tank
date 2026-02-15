@@ -13,11 +13,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>cyber-tank-common-core</module>
+        <module>cyber-tank-common-cache</module>
+        <module>cyber-tank-common-db</module>
         <module>cyber-tank-common-web</module>
         <module>cyber-tank-common-thirdparty</module>
-        <module>cyber-tank-common-thirdparty/cyber-tank-common-thirdparty-wechat</module>
-        <module>cyber-tank-common-thirdparty/cyber-tank-common-thirdparty-alipay</module>
-        <module>cyber-tank-common-thirdparty/cyber-tank-common-thirdparty-sms</module>
         <module>cyber-tank-common-mq</module>
     </modules>
 
