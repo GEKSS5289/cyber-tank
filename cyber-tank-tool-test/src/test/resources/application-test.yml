@@ -14,3 +14,10 @@ spring:
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
+
+  rabbitmq:
+    host: ${TOOL_TEST_RABBITMQ_HOST:127.0.0.1}
+    port: ${TOOL_TEST_RABBITMQ_PORT:5672}
+    username: ${TOOL_TEST_RABBITMQ_USERNAME:guest}
+    password: ${TOOL_TEST_RABBITMQ_PASSWORD:guest}
+
