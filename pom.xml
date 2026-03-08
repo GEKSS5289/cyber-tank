@@ -61,6 +61,31 @@
             </dependency>
             <dependency>
                 <groupId>com.cyber.tank</groupId>
+                <artifactId>cyber-tank-common-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cyber.tank</groupId>
+                <artifactId>cyber-tank-common-starter-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cyber.tank</groupId>
+                <artifactId>cyber-tank-common-starter-cache</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cyber.tank</groupId>
+                <artifactId>cyber-tank-common-starter-db</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cyber.tank</groupId>
+                <artifactId>cyber-tank-common-starter-rabbit</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cyber.tank</groupId>
                 <artifactId>cyber-tank-common-cache</artifactId>
                 <version>${project.version}</version>
             </dependency>

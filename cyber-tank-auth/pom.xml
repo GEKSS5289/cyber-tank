@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>com.cyber.tank</groupId>
-            <artifactId>cyber-tank-common-web</artifactId>
+            <artifactId>cyber-tank-common-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>com.cyber.tank</groupId>
@@ -43,7 +43,7 @@
 
         <dependency>
             <groupId>com.cyber.tank</groupId>
-            <artifactId>cyber-tank-common-cache</artifactId>
+            <artifactId>cyber-tank-common-starter-cache</artifactId>
         </dependency>
     </dependencies>
 

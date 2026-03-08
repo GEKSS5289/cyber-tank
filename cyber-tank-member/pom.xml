@@ -14,7 +14,12 @@
     <dependencies>
         <dependency>
             <groupId>com.cyber.tank</groupId>
-            <artifactId>cyber-tank-common-web</artifactId>
+            <artifactId>cyber-tank-common-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cyber.tank</groupId>
+            <artifactId>cyber-tank-common-starter-db</artifactId>
         </dependency>
 
         <dependency>

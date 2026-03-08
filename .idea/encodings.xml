@@ -23,6 +23,16 @@
     <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-mq/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-security/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-security/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-starter-cache/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-starter-cache/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-starter-db/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-starter-db/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-starter-rabbit/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-starter-rabbit/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-starter-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-starter-web/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-starter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-thirdparty/cyber-tank-common-thirdparty-alipay/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-thirdparty/cyber-tank-common-thirdparty-alipay/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-thirdparty/cyber-tank-common-thirdparty-sms/src/main/java" charset="UTF-8" />

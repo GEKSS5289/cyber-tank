@@ -15,9 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.text.ParseException;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * JWT 工具类 (基于 nimbus-jose-jwt)
@@ -29,17 +27,25 @@ import java.util.Objects;
  */
 public class JwtUtils {
 
-    // 建议后续将密钥移至配置文件 (yml) 中管理
-    private static final String SECRET = "CyberTank-Modern-Security-Key-2026-666888";
+    private static volatile JwtConfig jwtConfig = new JwtConfig(
+            "CyberTank-Modern-Security-Key-2026-666888",
+            24 * 60 * 60 * 1000L,
+            SecurityConstants.TOKEN_PREFIX
+    );
 
-    // 默认过期时间 (例如 24 小时)
-    private static final long DEFAULT_EXPIRE_MILLIS = 24 * 60 * 60 * 1000L;
+    public static void configure(String secret, long expireMillis, String tokenPrefix) {
+        jwtConfig = new JwtConfig(
+                StrUtil.blankToDefault(secret, jwtConfig.secret()),
+                expireMillis > 0 ? expireMillis : jwtConfig.expireMillis(),
+                StrUtil.blankToDefault(tokenPrefix, jwtConfig.tokenPrefix())
+        );
+    }
 
     /**
      * 创建令牌 (使用默认过期时间)
      */
     public static String createToken(Map<String, Object> claims) {
-        return createToken(claims, DEFAULT_EXPIRE_MILLIS);
+        return createToken(claims, jwtConfig.expireMillis());
     }
 
     /**
@@ -69,7 +75,7 @@ public class JwtUtils {
             });
 
             SignedJWT signedJWT = new SignedJWT(new JWSHeader(JWSAlgorithm.HS256), builder.build());
-            signedJWT.sign(new MACSigner(SECRET));
+            signedJWT.sign(new MACSigner(jwtConfig.secret()));
             return signedJWT.serialize();
         } catch (JOSEException e) {
             log.error("生成令牌失败: {}", e.getMessage());
@@ -136,7 +142,7 @@ public class JwtUtils {
      */
     private static JWTClaimsSet parseClaimsSet(String token) {
         // 1. 处理 Bearer 前缀
-        String realToken = StrUtil.removePrefixIgnoreCase(token, SecurityConstants.TOKEN_PREFIX).trim();
+        String realToken = StrUtil.removePrefixIgnoreCase(token, jwtConfig.tokenPrefix()).trim();
 
         if (StrUtil.isBlank(realToken)) {
             throw new ServiceException("令牌为空");
@@ -146,7 +152,7 @@ public class JwtUtils {
             SignedJWT signedJWT = SignedJWT.parse(realToken);
 
             // 2. 校验签名
-            if (!signedJWT.verify(new MACVerifier(SECRET))) {
+            if (!signedJWT.verify(new MACVerifier(jwtConfig.secret()))) {
                 throw new ServiceException("令牌签名无效");
             }
 
@@ -162,5 +168,8 @@ public class JwtUtils {
             log.error("令牌解析异常: {}", e.getMessage());
             throw new ServiceException("无效的令牌");
         }
+    }
+
+    private record JwtConfig(String secret, long expireMillis, String tokenPrefix) {
     }
 }

@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 public final class RedisKeyBuilder {
 
     private static final String DELIMITER = ":";
+    private static volatile String defaultPrefix = "";
 
     /**
      * 构造 RedisKeyBuilder 实例。
@@ -28,5 +29,19 @@ public final class RedisKeyBuilder {
         return Arrays.stream(segments)
                 .map(String::valueOf)
                 .collect(Collectors.joining(DELIMITER));
+    }
+
+    public static String buildWithPrefix(Object... segments) {
+        if (defaultPrefix == null || defaultPrefix.isBlank()) {
+            return build(segments);
+        }
+        Object[] allSegments = new Object[segments.length + 1];
+        allSegments[0] = defaultPrefix;
+        System.arraycopy(segments, 0, allSegments, 1, segments.length);
+        return build(allSegments);
+    }
+
+    public static void setDefaultPrefix(String prefix) {
+        defaultPrefix = prefix == null ? "" : prefix.trim();
     }
 }

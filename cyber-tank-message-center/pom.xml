@@ -15,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>com.cyber.tank</groupId>
-            <artifactId>cyber-tank-common-mq-rabbit</artifactId>
+            <artifactId>cyber-tank-common-starter-rabbit</artifactId>
         </dependency>
 
         <dependency>
