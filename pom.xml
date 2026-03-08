@@ -86,7 +86,7 @@
             </dependency>
             <dependency>
                 <groupId>com.cyber.tank</groupId>
-                <artifactId>cyber-tank-api</artifactId>
+                <artifactId>cyber-tank-common-thirdparty-wechat</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -117,11 +117,6 @@
                 <scope>import</scope>
             </dependency>
 
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-data-redis</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-pool2</artifactId>
@@ -184,11 +179,6 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
