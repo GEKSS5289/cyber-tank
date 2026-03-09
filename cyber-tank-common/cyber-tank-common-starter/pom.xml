@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>cyber-tank-common-starter</artifactId>
-    <description>新业务服务默认 Starter，直接提供 Web、注册发现与配置中心接入能力。</description>
+    <description>新业务服务默认 Starter，直接提供 Web、安全、注册发现与配置中心接入能力。</description>
 
     <dependencies>
         <dependency>

@@ -1,7 +1,7 @@
 package com.cyber.tank.common.core.constant;
 
 /**
- * SecurityConstants 的核心定义。
+ * 安全头、用户上下文与链路追踪的统一常量定义。
  */
 public interface SecurityConstants {
     /**

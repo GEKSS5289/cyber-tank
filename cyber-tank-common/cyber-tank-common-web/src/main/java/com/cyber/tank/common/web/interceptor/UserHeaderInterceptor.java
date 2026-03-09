@@ -2,8 +2,9 @@ package com.cyber.tank.common.web.interceptor;
 
 import cn.hutool.core.util.StrUtil;
 import com.cyber.tank.common.core.constant.SecurityConstants;
-import com.cyber.tank.common.core.context.SecurityContextHolder;
-import com.cyber.tank.common.core.utils.JwtUtils;
+import com.cyber.tank.common.security.context.SecurityContextHolder;
+import com.cyber.tank.common.security.domain.SecurityUser;
+import com.cyber.tank.common.security.utils.JwtUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -20,11 +21,9 @@ public class UserHeaderInterceptor implements HandlerInterceptor {
         }
 
         try {
-            Long userId = JwtUtils.getUserId(token);
-            if (userId != null) {
-                SecurityContextHolder.set(SecurityConstants.DETAILS_USER_ID, userId);
-                SecurityContextHolder.set(SecurityConstants.DETAILS_USERNAME, JwtUtils.getUserName(token));
-            }
+            SecurityUser securityUser = JwtUtils.parseAuthenticatedUser(token);
+            SecurityContextHolder.set(SecurityConstants.DETAILS_USER_ID, securityUser.userId());
+            SecurityContextHolder.set(SecurityConstants.DETAILS_USERNAME, securityUser.username());
         } catch (Exception e) {
             log.debug("Token parse failed, request context remains empty: {}", e.getMessage());
         }

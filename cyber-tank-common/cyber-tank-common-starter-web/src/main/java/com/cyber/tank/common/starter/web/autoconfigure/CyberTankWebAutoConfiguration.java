@@ -1,11 +1,8 @@
 package com.cyber.tank.common.starter.web.autoconfigure;
 
-import com.cyber.tank.common.core.config.FeignConfig;
 import com.cyber.tank.common.core.config.JacksonConfig;
 import com.cyber.tank.common.core.filter.TraceFilter;
-import com.cyber.tank.common.core.properties.CyberTankJwtProperties;
 import com.cyber.tank.common.core.properties.CyberTankTraceProperties;
-import com.cyber.tank.common.core.utils.JwtUtils;
 import com.cyber.tank.common.web.aspect.InnerAuthAspect;
 import com.cyber.tank.common.web.aspect.LogAspect;
 import com.cyber.tank.common.web.config.WebMvcConfig;
@@ -24,12 +21,10 @@ import org.springframework.context.annotation.Import;
 @AutoConfiguration
 @EnableConfigurationProperties({
         CyberTankWebProperties.class,
-        CyberTankTraceProperties.class,
-        CyberTankJwtProperties.class
+        CyberTankTraceProperties.class
 })
 @Import({
-        JacksonConfig.class,
-        FeignConfig.class
+        JacksonConfig.class
 })
 public class CyberTankWebAutoConfiguration {
 
@@ -74,18 +69,5 @@ public class CyberTankWebAutoConfiguration {
         registration.setOrder(traceProperties.getOrder());
         registration.addUrlPatterns("/*");
         return registration;
-    }
-
-    @Bean
-    @ConditionalOnMissingBean(name = "jwtBootstrap")
-    public Runnable jwtBootstrap(CyberTankJwtProperties jwtProperties) {
-        // 在容器启动早期同步 JwtUtils 的运行配置，避免工具类读到默认值。
-        JwtUtils.configure(
-                jwtProperties.getSecret(),
-                jwtProperties.getExpireMillis(),
-                jwtProperties.getTokenPrefix()
-        );
-        return () -> {
-        };
     }
 }
