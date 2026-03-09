@@ -65,9 +65,7 @@
 ## 三、模块分层
 
 - `cyber-tank-common-core`
-  - 统一返回、异常、链路追踪常量、基础工具
-- `cyber-tank-common-security`
-  - JWT、用户上下文、内部鉴权、Feign 认证透传
+  - 统一返回、异常、JWT、用户上下文、内部鉴权、Feign 认证透传、链路追踪常量、基础工具
 - `cyber-tank-common-web`
   - MVC、AOP、异常处理、参数校验、文档支持
 - `cyber-tank-common-gateway`
@@ -84,7 +82,6 @@
 ## 四、维护规范
 
 - `starter` 只负责装配依赖与自动接入，不承载复杂业务代码
-- `core` 保持轻量，避免继续堆入安全、缓存、数据库、消息等重能力
-- `security` 统一承接 JWT、登录态和内部调用规则，业务模块不要重复写认证透传
+- `core` 保持稳定，承接最底层安全能力，但不要继续堆入缓存、数据库、消息等重能力
 - `gateway` 相关公共过滤器优先下沉到 `cyber-tank-common-gateway`，不要回流到网关宿主模块
 - 新公共能力优先独立成模块，再决定是否通过 starter 暴露

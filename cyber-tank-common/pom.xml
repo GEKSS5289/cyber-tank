@@ -14,14 +14,12 @@
     <description>Cyber Tank 公共工件聚合模块，沉淀新服务可复用的基础能力。</description>
     <modules>
         <module>cyber-tank-common-core</module>
-        <module>cyber-tank-common-security</module>
         <module>cyber-tank-common-gateway</module>
         <module>cyber-tank-common-cache</module>
         <module>cyber-tank-common-db</module>
         <module>cyber-tank-common-web</module>
         <module>cyber-tank-common-thirdparty</module>
         <module>cyber-tank-common-mq</module>
-        <module>cyber-tank-common-starter-security</module>
         <module>cyber-tank-common-starter-web</module>
         <module>cyber-tank-common-starter-gateway</module>
         <module>cyber-tank-common-starter-cache</module>
