@@ -19,6 +19,7 @@ public class CyberTankCacheAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
     public RedisService redisService(RedisTemplate<String, Object> redisTemplate, CyberTankCacheProperties cacheProperties) {
+        // 启动时统一设置默认 key 前缀，确保各服务下发的缓存 key 规范一致。
         RedisKeyBuilder.setDefaultPrefix(cacheProperties.getKeyPrefix());
         return new RedisService(redisTemplate);
     }

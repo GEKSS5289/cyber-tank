@@ -11,6 +11,7 @@
 
     <artifactId>cyber-tank-common-mq</artifactId>
     <packaging>pom</packaging>
+    <description>消息能力聚合模块，统一承载各类消息中间件实现。</description>
     <modules>
         <module>cyber-tank-common-mq-rabbit</module>
     </modules>

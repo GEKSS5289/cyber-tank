@@ -11,6 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>cyber-tank-common-web</artifactId>
+    <description>Web 公共模块，提供 MVC 配置、拦截器、AOP 与异常处理。</description>
 
     <dependencies>
         <dependency>

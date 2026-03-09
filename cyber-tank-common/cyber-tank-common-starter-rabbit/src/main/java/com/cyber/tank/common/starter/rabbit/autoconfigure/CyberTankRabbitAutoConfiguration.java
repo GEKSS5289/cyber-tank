@@ -15,6 +15,7 @@ public class CyberTankRabbitAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
     public RabbitMqService rabbitMqService(RabbitTemplate rabbitTemplate, AmqpAdmin amqpAdmin) {
+        // 只有在宿主显式引入 Rabbit 运行时后，才暴露统一的消息辅助服务。
         return new RabbitMqService(rabbitTemplate, amqpAdmin);
     }
 }

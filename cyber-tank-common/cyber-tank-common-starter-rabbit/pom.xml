@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>cyber-tank-common-starter-rabbit</artifactId>
-    <description>RabbitMQ 快速开发 Starter</description>
+    <description>RabbitMQ 能力 Starter，面向需要消息收发能力的服务按需接入。</description>
 
     <dependencies>
         <dependency>

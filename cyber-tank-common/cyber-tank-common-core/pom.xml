@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>cyber-tank-common-core</artifactId>
-    <description>核心通用模块</description>
+    <description>核心基础模块，提供统一返回、异常、上下文、JWT 与基础工具。</description>
 
     <dependencies>
         <dependency>

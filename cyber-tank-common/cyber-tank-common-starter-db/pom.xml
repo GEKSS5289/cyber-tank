@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>cyber-tank-common-starter-db</artifactId>
-    <description>DB 快速开发 Starter</description>
+    <description>数据库能力 Starter，面向需要 MySQL/MyBatis 能力的服务按需接入。</description>
 
     <dependencies>
         <dependency>

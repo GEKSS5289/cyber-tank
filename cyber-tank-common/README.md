@@ -1,19 +1,66 @@
-# cyber-tank-common 公共模块说明
+# cyber-tank-common 公共工件说明
 
-## 当前公共模块
+## 一、设计目标
 
-- `cyber-tank-common-core`：核心能力（统一返回、异常、注解、上下文、基础工具）。
-- `cyber-tank-common-cache`：缓存层公共能力（Redis 通用工具、Key 规范构建）。
-- `cyber-tank-common-db`：数据库公共能力（MySQL 通用访问工具、批量更新、健康探测）。
-- `cyber-tank-common-web`：Web 层公共能力（AOP、全局异常处理、接口日志）。
-- `cyber-tank-common-thirdparty`：三方能力聚合（微信/支付宝/短信）。
-- `cyber-tank-common-mq`：消息能力聚合（RocketMQ/RabbitMQ）。
+`cyber-tank-common` 的目标不是把所有能力塞进一个大包，而是把“新服务默认需要的能力”和“按需加载的能力”拆开。
 
-## 建议下一步补齐的公共模块
+这样做有两个直接收益：
 
-- `cyber-tank-common-idempotent`：接口幂等（令牌 + Redis 去重 + 注解切面）。
-- `cyber-tank-common-lock`：分布式锁（统一加解锁模板 + 超时续租）。
-- `cyber-tank-common-observability`：观测能力（Metrics、Tracing、日志规范）。
-- `cyber-tank-common-test`：测试支撑（Mock 工具、测试基类、数据构造器）。
+- 新服务接入简单，直接引用基础 Starter 就能启动
+- 能力边界清晰，缓存、数据库、消息等不会被无关服务误带入
 
-以上模块可以按业务优先级逐步拆分，避免所有公共代码堆在 core 中导致后期耦合。
+## 二、推荐依赖方式
+
+### 1. 普通业务服务
+
+默认只引：
+
+- `cyber-tank-common-starter`
+
+该 Starter 当前内置：
+
+- `cyber-tank-common-starter-web`
+- `spring-cloud-starter-alibaba-nacos-discovery`
+- `spring-cloud-starter-alibaba-nacos-config`
+- `spring-cloud-starter-bootstrap`
+
+### 2. 网关服务
+
+默认引：
+
+- `cyber-tank-common-starter-gateway`
+
+该 Starter 当前内置：
+
+- `cyber-tank-common-core`
+- `spring-cloud-starter-loadbalancer`
+- `spring-cloud-starter-alibaba-nacos-discovery`
+- `spring-cloud-starter-alibaba-nacos-config`
+- `spring-cloud-starter-bootstrap`
+
+### 3. 按需扩展能力
+
+- 缓存能力：`cyber-tank-common-starter-cache`
+- 数据库能力：`cyber-tank-common-starter-db`
+- RabbitMQ 能力：`cyber-tank-common-starter-rabbit`
+
+## 三、模块分层
+
+- `cyber-tank-common-core`
+    - 统一返回、异常、上下文、JWT、基础工具
+- `cyber-tank-common-web`
+    - MVC、AOP、异常处理、参数校验、文档支持
+- `cyber-tank-common-cache`
+    - Redis 模板与缓存工具
+- `cyber-tank-common-db`
+    - MyBatis-Plus 与 MySQL 公共能力
+- `cyber-tank-common-mq`
+    - 消息中间件能力聚合
+- `cyber-tank-common-thirdparty`
+    - 外部平台能力聚合
+
+## 四、维护规范
+
+- `starter` 只负责装配依赖与自动接入，不承载复杂业务代码
+- `core` 保持轻量，避免继续堆入缓存、数据库、消息等重能力
+- 新公共能力优先独立成模块，再决定是否通过 starter 暴露

@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>cyber-tank-common-mq-rabbit</artifactId>
+    <description>RabbitMQ 公共模块，提供消息声明与发送辅助能力。</description>
 
     <dependencies>
         <dependency>

@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>cyber-tank-common-starter-cache</artifactId>
-    <description>Cache 快速开发 Starter</description>
+    <description>Redis 能力 Starter，面向需要缓存能力的服务按需接入。</description>
 
     <dependencies>
         <dependency>

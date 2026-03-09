@@ -11,6 +11,7 @@
 
     <artifactId>cyber-tank-common-thirdparty</artifactId>
     <packaging>pom</packaging>
+    <description>第三方能力聚合模块，统一承载微信等外部平台集成。</description>
 
     <modules>
         <module>cyber-tank-common-thirdparty-wechat</module>

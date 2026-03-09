@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>cyber-tank-common-db</artifactId>
-    <description>数据库通用模块，封装 MySQL 常用访问能力</description>
+    <description>数据库公共模块，封装 MySQL 与 MyBatis-Plus 常用访问能力。</description>
 
     <dependencies>
         <dependency>

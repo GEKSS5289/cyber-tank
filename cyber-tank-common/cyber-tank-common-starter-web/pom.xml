@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>cyber-tank-common-starter-web</artifactId>
-    <description>Web 快速开发 Starter</description>
+    <description>Servlet Web 能力 Starter，封装控制器、校验、异常与接口文档公共能力。</description>
 
     <dependencies>
         <dependency>

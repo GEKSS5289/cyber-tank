@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>cyber-tank-common-cache</artifactId>
-    <description>缓存通用模块，封装 Redis 常用能力</description>
+    <description>缓存公共模块，封装 Redis 模板、Key 规范与常用工具。</description>
 
     <dependencies>
         <dependency>

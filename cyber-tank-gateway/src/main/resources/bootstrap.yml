@@ -15,3 +15,9 @@ spring:
           - data-id: cyber-tank-common.yaml
             group: DEFAULT_GROUP
             refresh: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway

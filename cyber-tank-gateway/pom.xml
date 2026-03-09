@@ -10,34 +10,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>cyber-tank-gateway</artifactId>
-    <description>网关服务</description>
+    <description>平台网关服务，负责统一入口、鉴权、限流与路由转发。</description>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.cyber.tank</groupId>
-            <artifactId>cyber-tank-common-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bootstrap</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+            <artifactId>cyber-tank-common-starter-gateway</artifactId>
         </dependency>
 
         <dependency>

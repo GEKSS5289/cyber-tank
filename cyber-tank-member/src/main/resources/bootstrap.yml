@@ -1,6 +1,6 @@
 spring:
   application:
-    name: cyber-tank-business-member
+    name: cyber-tank-member
   cloud:
     nacos:
       discovery:

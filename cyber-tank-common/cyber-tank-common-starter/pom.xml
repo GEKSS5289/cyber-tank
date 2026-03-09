@@ -10,24 +10,25 @@
     </parent>
 
     <artifactId>cyber-tank-common-starter</artifactId>
-    <description>基础能力统一 Starter，面向新服务快速接入</description>
+    <description>新业务服务默认 Starter，直接提供 Web、注册发现与配置中心接入能力。</description>
 
     <dependencies>
         <dependency>
             <groupId>com.cyber.tank</groupId>
             <artifactId>cyber-tank-common-starter-web</artifactId>
         </dependency>
+
         <dependency>
-            <groupId>com.cyber.tank</groupId>
-            <artifactId>cyber-tank-common-starter-cache</artifactId>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.cyber.tank</groupId>
-            <artifactId>cyber-tank-common-starter-db</artifactId>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.cyber.tank</groupId>
-            <artifactId>cyber-tank-common-starter-rabbit</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
         </dependency>
     </dependencies>
 </project>

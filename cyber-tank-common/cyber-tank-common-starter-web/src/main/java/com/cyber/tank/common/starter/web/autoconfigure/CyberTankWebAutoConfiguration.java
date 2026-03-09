@@ -68,6 +68,7 @@ public class CyberTankWebAutoConfiguration {
     @ConditionalOnProperty(prefix = "cyber.tank.trace", name = "enabled", havingValue = "true", matchIfMissing = true)
     @ConditionalOnMissingBean(name = "traceFilterRegistration")
     public FilterRegistrationBean<TraceFilter> traceFilterRegistration(CyberTankTraceProperties traceProperties) {
+        // TraceFilter 属于 Servlet 链路过滤器，只有在 Web MVC 应用里才注册。
         FilterRegistrationBean<TraceFilter> registration = new FilterRegistrationBean<>();
         registration.setFilter(new TraceFilter(traceProperties.getHeaderName(), traceProperties.getMdcKey()));
         registration.setOrder(traceProperties.getOrder());
@@ -78,6 +79,7 @@ public class CyberTankWebAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean(name = "jwtBootstrap")
     public Runnable jwtBootstrap(CyberTankJwtProperties jwtProperties) {
+        // 在容器启动早期同步 JwtUtils 的运行配置，避免工具类读到默认值。
         JwtUtils.configure(
                 jwtProperties.getSecret(),
                 jwtProperties.getExpireMillis(),
