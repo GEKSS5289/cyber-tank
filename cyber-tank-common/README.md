@@ -21,7 +21,6 @@
 该 Starter 当前内置：
 
 - `cyber-tank-common-starter-web`
-- `cyber-tank-common-starter-security`
 - `spring-cloud-starter-alibaba-nacos-discovery`
 - `spring-cloud-starter-alibaba-nacos-config`
 - `spring-cloud-starter-bootstrap`
@@ -42,7 +41,6 @@
 该 Starter 当前内置：
 
 - `cyber-tank-common-gateway`
-- `cyber-tank-common-starter-security`
 - `spring-cloud-starter-loadbalancer`
 - `spring-cloud-starter-alibaba-nacos-discovery`
 - `spring-cloud-starter-alibaba-nacos-config`

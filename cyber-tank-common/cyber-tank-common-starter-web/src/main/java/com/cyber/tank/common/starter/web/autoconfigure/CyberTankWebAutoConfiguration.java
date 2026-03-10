@@ -5,10 +5,14 @@ import com.cyber.tank.common.core.filter.TraceFilter;
 import com.cyber.tank.common.core.properties.CyberTankTraceProperties;
 import com.cyber.tank.common.web.aspect.InnerAuthAspect;
 import com.cyber.tank.common.web.aspect.LogAspect;
+import com.cyber.tank.common.web.aspect.RepeatSubmitAspect;
 import com.cyber.tank.common.web.config.WebMvcConfig;
 import com.cyber.tank.common.web.exception.GlobalExceptionHandler;
 import com.cyber.tank.common.web.interceptor.UserHeaderInterceptor;
+import com.cyber.tank.common.web.properties.CyberTankRepeatSubmitProperties;
 import com.cyber.tank.common.web.properties.CyberTankWebProperties;
+import com.cyber.tank.common.web.support.InMemoryRepeatSubmitStore;
+import com.cyber.tank.common.web.support.RepeatSubmitStore;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -21,7 +25,8 @@ import org.springframework.context.annotation.Import;
 @AutoConfiguration
 @EnableConfigurationProperties({
         CyberTankWebProperties.class,
-        CyberTankTraceProperties.class
+        CyberTankTraceProperties.class,
+        CyberTankRepeatSubmitProperties.class
 })
 @Import({
         JacksonConfig.class
@@ -56,6 +61,22 @@ public class CyberTankWebAutoConfiguration {
     @ConditionalOnMissingBean
     public LogAspect logAspect() {
         return new LogAspect();
+    }
+
+    @Bean
+    @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
+    @ConditionalOnProperty(prefix = "cyber.tank.web.repeat-submit", name = "enabled", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnMissingBean
+    public RepeatSubmitStore repeatSubmitStore() {
+        return new InMemoryRepeatSubmitStore();
+    }
+
+    @Bean
+    @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
+    @ConditionalOnProperty(prefix = "cyber.tank.web.repeat-submit", name = "enabled", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnMissingBean
+    public RepeatSubmitAspect repeatSubmitAspect(RepeatSubmitStore repeatSubmitStore) {
+        return new RepeatSubmitAspect(repeatSubmitStore);
     }
 
     @Bean

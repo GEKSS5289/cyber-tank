@@ -17,9 +17,5 @@
             <groupId>com.cyber.tank</groupId>
             <artifactId>cyber-tank-common-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.cyber.tank</groupId>
-            <artifactId>cyber-tank-common-starter-security</artifactId>
-        </dependency>
     </dependencies>
 </project>

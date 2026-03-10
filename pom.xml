@@ -67,11 +67,6 @@
             </dependency>
             <dependency>
                 <groupId>com.cyber.tank</groupId>
-                <artifactId>cyber-tank-common-starter-security</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.cyber.tank</groupId>
                 <artifactId>cyber-tank-common-starter-web</artifactId>
                 <version>${project.version}</version>
             </dependency>

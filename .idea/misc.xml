@@ -9,7 +9,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-security/pom.xml" />
+        <option value="$PROJECT_DIR$/cyber-tank-common/cyber-tank-common-starter-security/pom.xml" />
         <option value="$PROJECT_DIR$/cyber-tank-core/pom.xml" />
         <option value="$PROJECT_DIR$/cyber-tank-data/pom.xml" />
         <option value="$PROJECT_DIR$/cyber-tank-message-center/pom.xml" />
